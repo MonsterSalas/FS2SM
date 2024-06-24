@@ -37,12 +37,6 @@ export class IndexComponent implements OnInit {
       imagen: 'assets/img/monitor.jpeg',
       precio: 200
     },
-    {
-      nombre: 'Samsung Odyssey Neo G9',
-      descripcion: 'Tela Curva Super Ultrawide, 240Hz, FreeSync',
-      imagen: 'assets/img/mother2.jpg',
-      precio: 200
-    }
   ];
 
   ngOnInit(): void {
@@ -69,9 +63,11 @@ export class IndexComponent implements OnInit {
   }
 
   actualizarCarrito(): void {
-    const carritoGuardado = localStorage.getItem('carrito');
-    if (carritoGuardado) {
-      this.carrito = JSON.parse(carritoGuardado);
+    if (typeof window !== 'undefined' && window.localStorage) {
+      const carritoGuardado = localStorage.getItem('carrito');
+      if (carritoGuardado) {
+        this.carrito = JSON.parse(carritoGuardado);
+      }
     }
   }
 

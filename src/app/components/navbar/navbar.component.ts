@@ -14,7 +14,10 @@ export class NavbarComponent {
   constructor(private Router: Router) {
   }
   get isLoggedIn(): boolean {
-    return localStorage.getItem('isLoggedIn') === 'true';
+    if (typeof window !== 'undefined' && window.localStorage) {
+      return localStorage.getItem('isLoggedIn') === 'true';
+    }
+    return false; // Asume que no está logueado si localStorage no está disponible
   }
   
   logout(): void {
