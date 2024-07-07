@@ -69,7 +69,7 @@ export class ListaUsuariosComponent implements OnInit{
     if (this.nombre && this.direccion !== null) {
       this.addPerson();
       this.nombre = '';
-      this.direccion = null;
+      this.direccion = '';
     } else {
       window.alert('Por favor, ingrese un nombre y una direccion');
     }
