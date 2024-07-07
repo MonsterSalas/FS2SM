@@ -5,9 +5,9 @@ import { LoginComponent } from './components/login/login.component';
 import { RegistrarComponent } from './components/registrar/registrar.component'; 
 import { PerfilComponent } from './components/perfil/perfil.component'; 
 import { AdminComponent } from './components/admin/admin.component'; 
+import { ListaUsuariosComponent } from './components/lista-usuarios/lista-usuarios.component';
 
 export const routes: Routes = [
-
     {
         path: '',
         redirectTo: 'index',
@@ -24,7 +24,8 @@ export const routes: Routes = [
     { path: 'perfil',
             component: PerfilComponent },
     { path: 'admin',
-        component: AdminComponent }
+        component: AdminComponent },
+    {path: 'lista-usuarios', component: ListaUsuariosComponent},
         
 
 ];

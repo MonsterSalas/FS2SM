@@ -115,7 +115,7 @@ export class RegistrarComponent implements OnInit {
       // Verificar qué campo tiene el error y mostrar el mensaje correspondiente
       if (this.registrarForm.get('correo')?.errors?.['correoInvalido']) {
         Swal.fire('Error', 'El correo electrónico no tiene un formato válido.', 'error');
-      } else if (this.registrarForm.get('contrasenia')?.errors?.['contraseniaInvalida']) {
+      } else if (this.registrarForm.get('contrasennia')?.errors?.['contraseniaInvalida']) {
         Swal.fire('Error', 'La contraseña debe tener al menos 8 caracteres, incluir una mayúscula y un número.', 'error');
       }
     }

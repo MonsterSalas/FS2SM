@@ -1,0 +1,17 @@
+[
+    {
+       "id":1,
+       "nombre":"a@a.cl",
+       "direccion":"casa 1"
+    },
+    {
+       "id":2,
+       "nombre":"carlos@a.cl",
+       "direccion":"casa 1"
+    },
+    {
+       "id":3,
+       "nombre":"ignacio@a.cl",
+       "direccion":"casa 1"
+    }
+ ]
