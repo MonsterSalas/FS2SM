@@ -43,7 +43,7 @@ export class ListaUsuariosComponent implements OnInit{
     
     if (index !== -1) {
       this.usuarios[index].nombre = this.nombre;
-      this.usuarios[index].edad = this.direccion;
+      this.usuarios[index].direccion = this.direccion;
       this.jsonService.MetodoUsuario(this.usuarios);
     } else {
       window.alert('El elemento de la lista no existe');
