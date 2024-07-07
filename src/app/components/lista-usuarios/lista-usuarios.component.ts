@@ -16,7 +16,7 @@ export class ListaUsuariosComponent implements OnInit{
 
   usuarios: any[] = [];
   nombre: string = '';
-  direccion: number | null = null;
+  direccion: string = '';
 
   constructor(private jsonService: JsonService) {}
 
@@ -42,14 +42,19 @@ export class ListaUsuariosComponent implements OnInit{
     const index = this.usuarios.findIndex((elemento: any) => elemento.id === persona.id);
     
     if (index !== -1) {
-      this.usuarios[index].nombre = this.nombre;
-      this.usuarios[index].direccion = this.direccion;
+      // Solo actualiza el nombre si el nuevo valor no está vacío
+      if (this.nombre.trim() !== '') {
+        this.usuarios[index].nombre = this.nombre;
+      }
+      // Solo actualiza la dirección si el nuevo valor no está vacío
+      if (this.direccion.trim() !== '') {
+        this.usuarios[index].direccion = this.direccion;
+      }
       this.jsonService.MetodoUsuario(this.usuarios);
     } else {
       window.alert('El elemento de la lista no existe');
     }
   }
-
   addPerson(): void {
     const newPerson = {
       id: this.usuarios.length > 0 ? Math.max(...this.usuarios.map((p: any) => p.id)) + 1 : 1,
